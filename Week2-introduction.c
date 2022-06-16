@@ -2,36 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char **argv)
+int main()
 {
+	int i,arr[100],maximum,size,index;
+	int Size= 5
+	static int array1[] = {1, -1, 100, 32, 64, -97};
+	static int array2[] = {-100, 1, -10, 50, -40, 100};
 
-	int i;
-	int j;
-	int k;
-	char str[256];
-
-	printf("Hello World\n");
-	printf("Please enter your name: ");
-	fgets(str, sizeof(str), stdin);
-	i = strlen(str);
-	str[i - 1] = 0;
-	printf("Hello %s, glad to meet you.\n", str);
-
-	j = 0;
-	k = 0;
-	for (i = 0; str[i] != 0; i++) {
-		if ((str[i] == 'A') || (str[i] == 'Z'))
-			j += 1;
-		else if (str[i] == 'b')
-			k += 1;
+	printf("\n Enter array elements:- ");
+ 
+	for(i=0;i<size;i++)
+		scanf("%d",&arr[i]);
+	maximum=arr[0];
+	for(i=0;i<size;i++)
+	{
+		if(maximum<arr[i])
+		{
+		maximum=arr[i];
+		index=i;
+		}
 	}
 	
-	printf("Count of A and Z = %d\n", j);
-	printf("Count of b = %d\n", k);
-
-	if (j > 3)
-		printf("That is a lot of A and Z\n");
-	
-	return (0);
-
 }
